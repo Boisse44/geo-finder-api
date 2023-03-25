@@ -1,2 +1,3 @@
 # geo-finder-api
-Find 
+
+Get cities suggestions. 

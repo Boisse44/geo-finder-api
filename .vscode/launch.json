@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GeoFinderApplication<geo-finder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.boisse44.geofinder.GeoFinderApplication",
+            "projectName": "geo-finder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
