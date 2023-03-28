@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.boisse44.geofinder.model.City;
+import com.boisse44.geofinder.model.dto.CityDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -33,6 +34,6 @@ public interface SuggestionController {
       @ApiResponse(responseCode = "404", description = "City not found.")
     })
           
-  List<City> suggestions(@RequestParam String cityName, @RequestParam(required = false) String longitude, @RequestParam(required = false) String latitude);
+  List<CityDTO> suggestions(@RequestParam String cityName, @RequestParam(required = false) String longitude, @RequestParam(required = false) String latitude);
     
 }

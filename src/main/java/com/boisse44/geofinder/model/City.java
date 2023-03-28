@@ -17,4 +17,10 @@ public class City {
 
     @Parsed(field = "long")
     private String longitude;
+
+    @Parsed(field="country")
+    private String country;
+
+    @Parsed(field="admin1")
+    private String admin1;
 }
