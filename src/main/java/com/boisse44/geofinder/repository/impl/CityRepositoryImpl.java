@@ -37,7 +37,7 @@ public class CityRepositoryImpl implements CityRepository{
         BeanListProcessor<City> rowProcessor = new BeanListProcessor<>(City.class);
         settings.setHeaderExtractionEnabled(true);
         settings.setProcessor(rowProcessor);
-        settings.selectFields("id", "name", "lat", "long", "country", "admin1");
+        settings.selectFields("id", "name", "lat", "long", "country", "admin1", "population");
         TsvParser parser = new TsvParser(settings);
         parser.parseAllRecords(is);
         return rowProcessor;

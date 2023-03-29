@@ -23,4 +23,7 @@ public class City {
 
     @Parsed(field="admin1")
     private String admin1;
+
+    @Parsed(field="population")
+    private String population;
 }

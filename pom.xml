@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.boisse44</groupId>
 	<artifactId>geo-finder</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>geo-finder</name>
 	<description>API for city suggestions</description>
 	<properties>

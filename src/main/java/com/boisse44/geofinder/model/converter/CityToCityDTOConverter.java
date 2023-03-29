@@ -35,7 +35,11 @@ public class CityToCityDTOConverter {
 
     private String getScore(City city, String keyword) {
         LevenshteinDistance levenshteinDistance = new LevenshteinDistance();
-        return levenshteinDistance.apply(city.getName(), keyword).toString();
+        return Double.toString(normalizedLevenshteinDistance(levenshteinDistance.apply(keyword, city.getName()), keyword, city.getName()));
+    }
+
+    private double normalizedLevenshteinDistance(double levenshtein, String s1, String s2) {
+        return 1-(levenshtein / Math.max(s1.length(), s2.length()));
     }
 
     private String getCanadaProvince(String admin1) {
