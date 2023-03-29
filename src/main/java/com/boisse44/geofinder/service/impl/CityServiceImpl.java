@@ -19,7 +19,11 @@ public class CityServiceImpl implements CityService {
     
     @Override
     public List<City> getCitiesByName(String name) {
-        return cityRepository.getDataByName(name);
+        List<City> cities = new ArrayList<>();
+        if (name != null && !name.isEmpty()) {
+            cities = cityRepository.getDataByName(name);
+        }
+        return cities;
     }
     @Override
     public List<City> getCitiesByNameAndPosition(String name, String longitude, String latitude) {
