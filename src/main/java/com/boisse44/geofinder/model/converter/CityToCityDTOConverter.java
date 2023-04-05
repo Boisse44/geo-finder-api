@@ -19,7 +19,7 @@ public class CityToCityDTOConverter {
             .name(formatName(city))
             .longitude(city.getLongitude())
             .latitude(city.getLatitude())
-            .score(getScore(city, keyword))
+            .score(Double.parseDouble(getScore(city, keyword)))
             .build();
     }
 

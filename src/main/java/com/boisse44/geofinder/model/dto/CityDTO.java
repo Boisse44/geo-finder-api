@@ -9,6 +9,6 @@ public class CityDTO {
     private String name;
     private String longitude;
     private String latitude;
-    private String score;
+    private Double score;
     
 }

@@ -1,6 +1,7 @@
 package com.boisse44.geofinder.controller.impl;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +27,14 @@ public class SuggestionControllerImpl implements SuggestionController {
         List<City> cities = longitude != null && latitude != null 
             ? cityService.getCitiesByNameAndPosition(cityName, longitude, latitude)
             : cityService.getCitiesByName(cityName);
-        return cities.stream().map(city -> cityDTOConverter.convert(city, cityName)).toList();
+        return cities
+            .stream()
+            .map(city -> cityDTOConverter.convert(city, cityName))
+            .sorted(Comparator.comparingDouble(CityDTO::getScore)
+                .reversed()
+            )
+            .limit(10)
+            .toList();
     }
     
 }
